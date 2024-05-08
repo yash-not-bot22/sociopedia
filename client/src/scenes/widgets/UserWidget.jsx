@@ -10,7 +10,7 @@ import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 const UserWidget = ({ userId, picturePath }) => {
   const [user, setUser] = useState(null);
@@ -123,7 +123,7 @@ const UserWidget = ({ userId, picturePath }) => {
             <img src="../assets/twitter.png" alt="twitter" />
             <Box>
               <Typography color={main} fontWeight="500">
-                Twitter
+               <a href="https://www.instagram.com/yashbaghel2003/" target="_self">Instagram</a>
               </Typography>
               <Typography color={medium}>Social Network</Typography>
             </Box>
@@ -136,7 +136,7 @@ const UserWidget = ({ userId, picturePath }) => {
             <img src="../assets/linkedin.png" alt="linkedin" />
             <Box>
               <Typography color={main} fontWeight="500">
-                Linkedin
+                <a href="https://www.linkedin.com/in/yash-baghela-468916256/" >LinkedIn</a>
               </Typography>
               <Typography color={medium}>Network Platform</Typography>
             </Box>
