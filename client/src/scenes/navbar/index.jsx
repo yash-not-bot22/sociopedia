@@ -85,7 +85,14 @@ const Navbar = () => {
           </IconButton>
           <Message sx={{ fontSize: "25px" }} />
           <Notifications sx={{ fontSize: "25px" }} />
-          <Help sx={{ fontSize: "25px" }} />
+          <Typography onClick={()=>{navigate("/news")}}
+          sx={{
+            "&:hover": {
+              color: primaryLight,
+              cursor: "pointer",
+            },
+          }}
+          >NEWS</Typography>
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}
