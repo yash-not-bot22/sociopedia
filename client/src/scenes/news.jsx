@@ -4,14 +4,19 @@ import Cards from '../components/card'
 import { useEffect,useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 function News() {
   
   const [newsobject,setnewsobject]=useState(null);
   const [q,setq]=useState(null);
+  const [que,setque]=useState(null);
 
   const querychange=(e)=>{
-    setq(e.target.value)
+    setque(e.target.value)
+  }
+  const qchange=()=>{
+    setq(que);
   }
   
   useEffect(()=>{
@@ -19,12 +24,12 @@ function News() {
 
       try{
       if(q) 
-      {const res=await fetch(`https://newsapi.org/v2/everything?q=${q}&apiKey=7f6082fc34a5461e9095368028e6e0e0`);
+      {const res=await fetch(`https://newsdata.io/api/1/latest?apikey=pub_47168622f478d51f07c3218dbade037a06406&q=${q}`);
       const t=await res.json();
       
       setnewsobject(t);}
       else
-      {const res=await fetch(`https://newsapi.org/v2/everything?q=india&apiKey=7f6082fc34a5461e9095368028e6e0e0`);
+      {const res=await fetch(`https://newsdata.io/api/1/latest?apikey=pub_47168622f478d51f07c3218dbade037a06406&q=india`);
       const t=await res.json();
       
       setnewsobject(t);}
@@ -41,7 +46,7 @@ function News() {
   },[q])
 
 
-const a=newsobject && newsobject.articles;
+const a=newsobject && newsobject.results;
 
 
   return (
@@ -56,6 +61,7 @@ const a=newsobject && newsobject.articles;
       autoComplete="off"
     >
       <TextField id="outlined-basic" onChange={querychange} label="search news" variant="outlined" />
+      <Button variant="contained" onClick={qchange}>search</Button>
       
     </Box>
     

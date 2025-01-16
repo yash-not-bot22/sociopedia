@@ -12,7 +12,7 @@ function Cards(props) {
        <Card sx={{ maxWidth: 345, mx: 1,my:2}}>
       <CardMedia
         sx={{ height: 140 }}
-        image={props.newobject.urlToImage}
+        image={props.newobject.image_url}
         title="green iguana"
       />
       <CardContent>
